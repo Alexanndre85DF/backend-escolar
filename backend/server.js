@@ -12,7 +12,7 @@ app.use(express.json());
 import('./index.js');
 
 // Sobe o servidor na porta exigida pelo Render
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
