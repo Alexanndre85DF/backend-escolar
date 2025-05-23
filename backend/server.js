@@ -19,5 +19,14 @@ const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
+app.get('/assessoramentos', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT * FROM assessoramentos'); // ajuste o nome da tabela se necessário
+    res.json(result.rows);
+  } catch (error) {
+    console.error('Erro ao buscar registros:', error);
+    res.status(500).json({ error: 'Erro ao buscar registros' });
+  }
+});
 
 
