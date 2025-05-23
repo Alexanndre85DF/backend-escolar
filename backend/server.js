@@ -8,10 +8,16 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Importa as rotas se você separou elas no `index.js`
-// Sobe o servidor na porta exigida pelo Render
+// Rota de debug para testar se o front envia corretamente
+app.post('/debug', (req, res) => {
+  console.log('🔎 Dados recebidos no /debug:', req.body);
+  res.status(200).send('Recebido!');
+});
+
 const PORT = process.env.PORT;
 
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
+
+

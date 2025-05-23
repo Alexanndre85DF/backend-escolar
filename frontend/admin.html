@@ -56,7 +56,7 @@
 
     async function carregarRegistros() {
       // Troque a URL abaixo pela do seu backend no Render
-      const resp = await fetch('https://backend-escolar.onrender.com/assessoramentos');
+      const resp = await fetch('https://backend-escolar.onrender.com/debug');
       registros = await resp.json();
       renderizarTabela();
     }
@@ -93,7 +93,7 @@
     async function excluirRegistro(id) {
       if (confirm('Deseja realmente excluir este registro?')) {
         // Troque a URL abaixo pela do seu backend no Render
-        await fetch(`https://backend-escolar.onrender.com/assessoramentos/${id}`, { method: 'DELETE' });
+        await fetch(`https://backend-escolar.onrender.com/debug/${id}`, { method: 'DELETE' });
         await carregarRegistros();
       }
     }
