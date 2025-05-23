@@ -9,8 +9,6 @@ app.use(cors());
 app.use(express.json());
 
 // Importa as rotas se você separou elas no `index.js`
-import('./index.js');
-
 // Sobe o servidor na porta exigida pelo Render
 const PORT = process.env.PORT;
 
